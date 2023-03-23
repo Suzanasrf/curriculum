@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9em;
+    background-image: url(sky-night.jpg)   ;
+    background-size: cover;
+}
+
+.text-light{
+    font-size: 0.9em
+}
+
+.front{
+transform: rotateY(0deg);
+}
+
+.back{
+  
+    transform: rotateY(-180deg);
+    background: linear-gradient(90deg, rgba(61,71,211,1) 0%, rgba(80,78,185,1) 44%, rgba(31,43,130,1) 100%);
+
+ 
+
+}
+
+
+
+.container-3{
+    display: flex;
+    position: relative;
+    perspective: 1000px;
+    align-items: center;
+    justify-content: center;
+   padding: 20px;
+    text-align: start;
+    border-radius: 7px;
+}
+
+.container:hover .front{
+    transform: rotateY(-180deg);
+}
+
+.container:hover .back{
+  transform: rotateY(0deg);
+ 
+}
+
+.front, .back{
+    position: absolute;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    border-radius: 5px;
+}
+
+@keyframes moverElemento{
+    
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+}
